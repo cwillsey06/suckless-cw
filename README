@@ -8,16 +8,16 @@ Compilation
 -----------
 First, clone this repository:
 $ git clone --recurse-submodules \
- 	https://github.com/cwillsey06/suckless-cw.git
+  	https://github.com/cwillsey06/suckless-cw.git
 
-Then, run the included `build.sh` shell script, it
-will build all the included software automatically
+Then, build all the included software:
+$ find $PARENT -maxdepth 1 -not -path '*/.*' -type d \
+  	-exec sh -c 'cd $1 && make' ';'
 
 Then you can choose what to do with the binaries.
-Personally, I sym-link them into my ~/.local/bin/
-
+Personally, I sym-link them into my ~/.local/bin/:
 $ find $(pwd -P) -maxdepth 2 -type f -executable \
- 	-exec ln -sf {} $HOME/.local/bin
+  	-exec ln -sf {} $HOME/.local/bin ';'
 
 
 Credits
