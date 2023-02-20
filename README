@@ -9,6 +9,8 @@ Compilation
 First, clone this repository:
 $ git clone --recurse-submodules \
   	https://github.com/cwillsey06/suckless-cw.git
+$ cd suckless-cw
+$ git submodule update --remote
 
 Then, build all the included software:
 $ find $(pwd -P) -maxdepth 1 -not -path '*/.git' -type d \
